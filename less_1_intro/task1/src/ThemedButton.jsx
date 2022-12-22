@@ -8,7 +8,7 @@ class ThemedButton extends Component {
       <button
         {...this.props}
         style={{
-          backgroundColor: this.context.backgroundColor,
+          backgroundColor: this.context.background,
           color: this.context.fontColor,
         }}
         className="btn"

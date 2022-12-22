@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
 import Header from './Header';
+import './index.scss';
+import { userData, UserDataContex } from './userData-context';
 
 class App extends Component {
-  // state = {
-  //   theme: themes.light,
-  // };
+  state = {
+    userData,
+  };
 
-  // toggleTheme = () => {
-  //   const newTheme =
-  //     this.state.theme === themes.dark ? themes.light : themes.dark;
-
-  //   this.setState({ theme: newTheme });
-  // };
   render() {
     return (
       <div className="page">
-        <Header />
+        <UserDataContex.Provider value={this.state.userData}>
+          <Header />
+        </UserDataContex.Provider>
       </div>
     );
   }

@@ -1,20 +1,12 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import './index.scss';
-// import App from './App';
+import { createStore } from 'redux';
 
-// const rootElement = document.querySelector('#root');
-
-// ReactDOM.render(<App />, rootElement);
-import { createStore } from 'rdux';
-
-const incrementAction = {
+const incrementActionCreator = () => ({
   type: 'INCREMENT',
-};
+});
 
-const decrementAction = {
+const decrementActionCreator = () => ({
   type: 'DECREMENT',
-};
+});
 
 const counterReducer = (state = 0, action) => {
   switch (action.type) {
@@ -27,4 +19,15 @@ const counterReducer = (state = 0, action) => {
   }
 };
 
-const store = createReducer();
+const store = createStore(counterReducer);
+
+//console.log(store); //{dispatch: ƒ, subscribe: ƒ, getState: ƒ, replaceReducer: ƒ, @@observable: ƒ}
+
+store.dispatch(incrementActionCreator); //1
+store.dispatch(incrementActionCreator); //2
+store.dispatch(incrementActionCreator); //3
+store.dispatch(decrementActionCreator); //2
+
+console.log(store.getState()); // 0
+
+//console.log(store.getState()); // {name: 'Tom'} if state = { name: 'Tom' }

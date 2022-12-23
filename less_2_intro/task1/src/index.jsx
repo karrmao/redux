@@ -28,11 +28,11 @@ const store = createStore(counterReducer);
 
 //console.log(store); //{dispatch: ƒ, subscribe: ƒ, getState: ƒ, replaceReducer: ƒ, @@observable: ƒ}
 
-store.dispatch(increment()); //1
-store.dispatch(increment()); //2
-store.dispatch(increment()); //3
-store.dispatch(decrement()); //2
+// store.dispatch(increment()); //1
+// store.dispatch(increment()); //2
+// store.dispatch(increment()); //3
+// store.dispatch(decrement()); //2
 
-console.log(store.getState()); // 0
+// console.log(store.getState()); // 0
 
 //console.log(store.getState()); // {name: 'Tom'} if state = { name: 'Tom' }

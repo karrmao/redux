@@ -1,0 +1,27 @@
+/* line 1, /Users/user/Documents/redux_l/less_1_context/task1/src/index.scss */
+* {
+  box-sizing: border-box; }
+
+/* line 5, /Users/user/Documents/redux_l/less_1_context/task1/src/index.scss */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 32px; }
+
+/* line 10, /Users/user/Documents/redux_l/less_1_context/task1/src/index.scss */
+#root {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+/* line 17, /Users/user/Documents/redux_l/less_1_context/task1/src/index.scss */
+.btn {
+  height: 32px;
+  border: 3px solid #ccc;
+  outline: none;
+  cursor: pointer;
+  border-radius: 8px;
+  margin: 16px;
+  font-size: 18px; }
+
+/*# sourceMappingURL=index.css.map */

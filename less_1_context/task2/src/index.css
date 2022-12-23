@@ -1,0 +1,41 @@
+/* line 1, /Users/user/Documents/redux_l/less_1_context/task2/src/index.scss */
+body {
+  font-family: Arial, Helvetica, sans-serif; }
+
+/* line 5, /Users/user/Documents/redux_l/less_1_context/task2/src/index.scss */
+#root {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+/* line 12, /Users/user/Documents/redux_l/less_1_context/task2/src/index.scss */
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw; }
+
+/* line 19, /Users/user/Documents/redux_l/less_1_context/task2/src/index.scss */
+.header {
+  display: flex;
+  padding: 8px;
+  background-color: cornsilk;
+  border-bottom: 1px solid #ccc; }
+
+/* line 26, /Users/user/Documents/redux_l/less_1_context/task2/src/index.scss */
+.menu {
+  display: flex;
+  align-items: center;
+  margin-left: auto; }
+  /* line 31, /Users/user/Documents/redux_l/less_1_context/task2/src/index.scss */
+  .menu__greeting {
+    opacity: 0.5; }
+  /* line 35, /Users/user/Documents/redux_l/less_1_context/task2/src/index.scss */
+  .menu__avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-left: 16px; }
+
+/*# sourceMappingURL=index.css.map */

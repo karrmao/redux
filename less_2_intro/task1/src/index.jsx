@@ -1,18 +1,21 @@
 import { createStore } from 'redux';
 
-const incrementActionCreator = () => ({
-  type: 'INCREMENT',
-});
+const INCREMENT = 'COUNTER/INCREMENT';
+const DECREMENT = 'COUNTER/DECREMENT';
 
-const decrementActionCreator = () => ({
-  type: 'DECREMENT',
-});
+const increment = () => {
+  return { type: INCREMENT };
+};
+
+const decrement = () => {
+  return { type: DECREMENT };
+};
 
 const counterReducer = (state = 0, action) => {
   switch (action.type) {
-    case 'INCREMENT':
+    case INCREMENT:
       return state + 1;
-    case 'DECREMENT':
+    case DECREMENT:
       return state - 1;
     default:
       return state;
@@ -21,12 +24,14 @@ const counterReducer = (state = 0, action) => {
 
 const store = createStore(counterReducer);
 
+//- test data
+
 //console.log(store); //{dispatch: ƒ, subscribe: ƒ, getState: ƒ, replaceReducer: ƒ, @@observable: ƒ}
 
-store.dispatch(incrementActionCreator); //1
-store.dispatch(incrementActionCreator); //2
-store.dispatch(incrementActionCreator); //3
-store.dispatch(decrementActionCreator); //2
+store.dispatch(increment()); //1
+store.dispatch(increment()); //2
+store.dispatch(increment()); //3
+store.dispatch(decrement()); //2
 
 console.log(store.getState()); // 0
 

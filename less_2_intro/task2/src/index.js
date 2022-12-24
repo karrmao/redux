@@ -12,6 +12,6 @@ const onIncrement = () => {
 
 incrementBtn.addEventListener('click', onIncrement);
 
-store.subscrible(() => {
+store.subscribe(() => {
   console.log(store.getState());
 });

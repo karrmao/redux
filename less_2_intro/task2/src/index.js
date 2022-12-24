@@ -1,5 +1,5 @@
 import './index.scss';
-import store, { increment } from './store';
+import store, { increment, decrement, reset } from './store';
 
 const resultElement = document.querySelector('.counter__result ');
 const incrementBtn = document.querySelector('[data-action="increment"]');
@@ -10,8 +10,27 @@ const onIncrement = () => {
   store.dispatch(increment());
 };
 
+const onDecrement = () => {
+  store.dispatch(decrement());
+};
+
+const onReset = () => {
+  store.dispatch(reset());
+};
+
 incrementBtn.addEventListener('click', onIncrement);
+decrementBtn.addEventListener('click', onDecrement);
+resetBtn.addEventListener('click', onReset);
 
 store.subscribe(() => {
-  console.log(store.getState());
+  const state = store.getState();
+  // const currentValue = state.history.value;
+  const currentValue = state.history.reduce(
+    (acc, value) => acc + value,
+    0,
+  );
+
+  const historyString = state.history.join(' ');
+  resultElement.textContent =
+    state.history.length === 0 ? '' : `${historyString} = ${currentValue}`;
 });

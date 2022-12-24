@@ -21,7 +21,6 @@ const initialState = {
   history: [],
 };
 //console.log(initialState.history);
-
 const counterReduser = (state = initialState, action) => {
   switch (action.type) {
     case INCREMENT:

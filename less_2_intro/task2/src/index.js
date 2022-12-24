@@ -29,7 +29,7 @@ store.subscribe(() => {
     (acc, value) => acc + Number(value),
     0,
   );
-
+  //console.log(resultElem);
   const historyString = state.history.join('');
   resultElem.textContent =
     state.history.length === 0 ? '' : `${historyString} = ${currentValue}`;

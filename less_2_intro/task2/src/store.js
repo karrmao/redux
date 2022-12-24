@@ -17,29 +17,29 @@ export const reset = () => {
 };
 
 const initialState = {
-  value: 0,
+  // value: 0,
   history: [],
 };
 
-const counterReduser = (state = 0, action) => {
+const counterReduser = (state = initialState, action) => {
   switch (action.type) {
     case INCREMENT:
       return {
         ...state,
-        value: state.value + 1,
-        history: state.history.concat('+1'),
+        // value: state.value + 1,
+        history: state.history.concat(1),
       };
 
     case DECREMENT:
       return {
         ...state,
-        value: state.value - 1,
+        // value: state.value - 1,
         history: state.history.concat(-1),
       };
     case RESET:
       return {
         ...state,
-        value: 0,
+        // value: 0,
         history: [],
       };
 

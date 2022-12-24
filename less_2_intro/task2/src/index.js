@@ -26,7 +26,7 @@ store.subscribe(() => {
   const state = store.getState();
   // const currentValue = state.history.value;
   const currentValue = state.history.reduce(
-    (acc, value) => acc + value,
+    (acc, value) => acc + Number(value),
     0,
   );
 

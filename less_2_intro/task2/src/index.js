@@ -1,7 +1,7 @@
 import './index.scss';
 import store, { increment, decrement, reset } from './store';
 
-const resultEle = document.querySelector('.counter__result ');
+const resultElem = document.querySelector('.counter__result ');
 const incrementBtn = document.querySelector('[data-action="increment"]');
 const resetBtn = document.querySelector('[data-action="reset"] ');
 const decrementBtn = document.querySelector('[data-action="decrement"]');
@@ -31,6 +31,6 @@ store.subscribe(() => {
   );
 
   const historyString = state.history.join('');
-  resultEle.textContent =
+  resultElem.textContent =
     state.history.length === 0 ? '' : `${historyString} = ${currentValue}`;
 });

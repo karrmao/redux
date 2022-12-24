@@ -16,7 +16,7 @@ export const reset = () => {
   return { type: RESET };
 };
 
-export const initialState = {
+const initialState = {
   value: 0,
   history: [],
 };

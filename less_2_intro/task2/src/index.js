@@ -10,7 +10,7 @@ const onIncrement = () => {
   store.dispach(increment());
 };
 
-incrementBtn.addEventListener('click, onIncrement');
+incrementBtn.addEventListener('click', onIncrement);
 
 store.subscrible(() => {
   console.log(store.getState());

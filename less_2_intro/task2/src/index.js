@@ -7,7 +7,7 @@ const resetBtn = document.querySelector('[data-action="reset"] ');
 const decrementBtn = document.querySelector('[data-action="decrement"]');
 
 const onIncrement = () => {
-  store.dispach(increment());
+  store.dispatch(increment());
 };
 
 incrementBtn.addEventListener('click', onIncrement);

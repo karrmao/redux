@@ -20,5 +20,5 @@ store.dispatch(reset());
 
 store.dispatch(addUser({ id: 1, name: 'Tom' }));
 store.dispatch(addUser({ id: 2, name: 'Vinton' }));
-
+console.log('DELL');
 store.dispatch(deleteUser(1));

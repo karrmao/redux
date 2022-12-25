@@ -8,7 +8,10 @@ const initialState = {
   usersList: [],
 };
 
-const usersReduser = (state = initialState, action) => {
+const usersReduser = (
+  state = initialState,
+  action,
+) => {
   switch (action.type) {
     case ADD_USER:
       return {
@@ -21,7 +24,8 @@ const usersReduser = (state = initialState, action) => {
       return {
         ...state,
         usersList: state.usersList.filter(
-          user => user.id !== action.payload.userId,
+          user =>
+            user.id !== action.payload.userId,
         ),
       };
     case UPDATE_USER:

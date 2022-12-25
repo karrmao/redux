@@ -1,4 +1,8 @@
-import { ADD_USER, DELETE_USER, UPDATE_USER } from './users.actions';
+import {
+  ADD_USER,
+  DELETE_USER,
+  UPDATE_USER,
+} from './users.actions';
 
 const initialState = {
   usersList: [],
@@ -8,7 +12,9 @@ const usersReducer = (state = initialState, action) => {
     case ADD_USER: {
       return {
         ...state,
-        usersList: state.usersList.concat(action.payload.userData),
+        usersList: state.usersList.concat(
+          action.payload.userData,
+        ),
       };
     }
     case DELETE_USER: {

@@ -1,6 +1,10 @@
-import { INCREMENT, DECREMENT, RESET } from './counter.actions';
+import {
+  INCREMENT,
+  DECREMENT,
+  RESET,
+} from './counter.actions';
 
-export const usersReducer = (state = 0, action) => {
+export const counterReducer = (state = 0, action) => {
   switch (action.type) {
     case INCREMENT:
       return state + 1;

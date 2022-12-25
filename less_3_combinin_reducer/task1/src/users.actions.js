@@ -22,7 +22,7 @@ export const deleteUser = userId => {
 
 export const updateUser = (userData, userId) => {
   return {
-    type: ADD_USER,
+    type: UPDATE_USER,
     payload: {
       userData,
       userId,

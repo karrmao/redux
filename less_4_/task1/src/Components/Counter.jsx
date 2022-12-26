@@ -8,15 +8,15 @@ const Counter = ({ counter, increment, decrement, reset }) => {
   return (
     <div className="counter">
       {/* <button className="counter__button" onClick={incr}> */}
-      <button className="counter__button" onClick={increment}>
+      <button className="counter__button" onClick={decrement}>
         -
       </button>
       {/* <span className="counter__value" onClick={decr}> */}
-      <span className="counter__value" onClick={decrement}>
+      <span className="counter__value" onClick={reset}>
         {counter}
       </span>
       {/* <button className="counter__button" onClick={res}> */}
-      <button className="counter__button" onClick={reset}>
+      <button className="counter__button" onClick={increment}>
         +
       </button>
     </div>

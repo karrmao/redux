@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 // import { increment, decrement, reset } from '../counter.actions';
-import * as counterActions from './counter.actions';
+import * as counterActions from '../counter.actions';
 
 // const Counter = ({ counter, incr, decr, res }) => {
 const Counter = ({ counter, increment, decrement, reset }) => {

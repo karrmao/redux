@@ -5,20 +5,22 @@ import * as counterActions from '../counter.actions';
 
 // const Counter = ({ counter, incr, decr, res }) => {
 const Counter = ({ counter, increment, decrement, reset }) => {
-  <div className="counter">
-    {/* <button className="counter__button" onClick={incr}> */}
-    <button className="counter__button" onClick={increment}>
-      -
-    </button>
-    {/* <span className="counter__value" onClick={decr}> */}
-    <span className="counter__value" onClick={decrement}>
-      {counter}
-    </span>
-    {/* <button className="counter__button" onClick={res}> */}
-    <button className="counter__button" onClick={reset}>
-      +
-    </button>
-  </div>;
+  return (
+    <div className="counter">
+      {/* <button className="counter__button" onClick={incr}> */}
+      <button className="counter__button" onClick={increment}>
+        -
+      </button>
+      {/* <span className="counter__value" onClick={decr}> */}
+      <span className="counter__value" onClick={decrement}>
+        {counter}
+      </span>
+      {/* <button className="counter__button" onClick={res}> */}
+      <button className="counter__button" onClick={reset}>
+        +
+      </button>
+    </div>
+  );
 };
 const mapState = state => {
   return {

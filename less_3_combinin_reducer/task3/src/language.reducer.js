@@ -9,5 +9,4 @@ const languageReducer = (state = 'en', action) => {
       return state;
   }
 };
-
 export default languageReducer;

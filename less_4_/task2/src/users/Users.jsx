@@ -17,7 +17,7 @@ class Users extends Component {
     return (
       <div className="users">
         <button onClick={this.onUserCreate} className="users__create-btn">
-          Create Batton
+          Create User
         </button>
         <ul className="users__list">
           {users.map(user => (

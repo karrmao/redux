@@ -18,7 +18,7 @@ class Users extends Component {
     return (
       <div className="users">
         <button onClick={this.onUserCreate} className="users__create-btn">
-          Create user
+          Create User
         </button>
         <ul className="users__list">
           {users.map(user => (
@@ -26,7 +26,7 @@ class Users extends Component {
               {user.name}
               <button
                 className="users__delete-btn"
-                onClick={() => deleteUser(user.Id)}
+                onClick={() => deleteUser(user.id)}
               >
                 +
               </button>

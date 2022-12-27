@@ -14,18 +14,19 @@ class Users extends Component {
 
   render() {
     const { users, deleteUser } = this.props;
+
     return (
       <div className="users">
         <button onClick={this.onUserCreate} className="users__create-btn">
-          Create User
+          Create user
         </button>
         <ul className="users__list">
           {users.map(user => (
             <li key={user.id} className="users__list-item">
               {user.name}
               <button
-                onClick={() => deleteUser(user.Id)}
                 className="users__delete-btn"
+                onClick={() => deleteUser(user.Id)}
               >
                 +
               </button>

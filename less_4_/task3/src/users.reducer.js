@@ -1,8 +1,5 @@
-import {
-  GO_NEXT,
-  GO_PREV,
-} from './users.actions';
-import { users } from './usersData';
+import { GO_PREV, GO_NEXT } from './user.actions';
+import { users } from './usersData.js';
 
 const initialState = {
   users: {
@@ -11,7 +8,7 @@ const initialState = {
   },
 };
 
-const usersReducer = (
+export const userReducer = (
   state = initialState,
   action,
 ) => {
@@ -38,4 +35,3 @@ const usersReducer = (
       return state;
   }
 };
-export default usersReducer;

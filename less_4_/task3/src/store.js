@@ -1,8 +1,10 @@
 import { createStore } from 'redux';
-import usersReducer from './users.reducer';
+import { userReducer } from './user.reducer';
 
-const store = createStore(usersReducer);
+const store = createStore(
+  userReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ &&
+    window.__REDUX_DEVTOOLS_EXTENSION__(),
+);
 
 export default store;
-// window.__REDUX_DEVTOOLS_EXTENSION__ &&
-//   window.__REDUX_DEVTOOLS_EXTENSION__(),

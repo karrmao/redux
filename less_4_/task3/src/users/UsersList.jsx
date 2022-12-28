@@ -19,7 +19,7 @@ const UsersList = ({
     startIndex,
     endIndex,
   );
-  console.log(usersRender);
+  //console.log(usersRender);
   return (
     <div>
       <Pagination

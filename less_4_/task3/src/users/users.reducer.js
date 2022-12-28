@@ -1,40 +1,30 @@
-import { ADD_USER, DELETE_USER } from './users.actions';
+import {
+  TO_NEXT_PAGE,
+  TO_PREV_PAGE,
+} from './users.actions';
+import { users } from './usersData';
 
 const initialState = {
-  usersList: [],
+  usersList: users,
+  currentPage: 1,
 };
-
-const usersReduser = (state = initialState, action) => {
+const usersReducer = (
+  state = initialState,
+  action,
+) => {
   switch (action.type) {
-    case ADD_USER:
+    case TO_NEXT_PAGE:
       return {
         ...state,
-        usersList: state.usersList.concat(action.payload.userData),
+        currentPage: state.currentPage + 1,
       };
-    // case DELETE_USER:
-    //   const newList = state.usersList.filter(
-    //     user => user.id !== action.payload.userId,
-    //   );
-    //   return {
-    //     ...state,
-    //     usersList: newList,
-    //   };
-    case DELETE_USER:
+    case TO_PREV_PAGE:
       return {
         ...state,
-        usersList: state.usersList.filter(
-          user => user.id !== action.payload.userId,
-        ),
+        currentPage: state.currentPage - 1,
       };
     default:
       return state;
   }
 };
-export default usersReduser;
-// case DELETE_USER:
-//     return {
-//       ...state,
-//       usersList: state.usersList.filter(
-//         user => user.id !== action.payload.userId,
-//       ),
-//     };
+export default usersReducer;

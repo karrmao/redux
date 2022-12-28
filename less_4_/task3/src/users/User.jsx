@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Users = ({ name, age }) => {
+const User = ({ name, age }) => {
   return (
     <li className="user">
       <span className="user__name">{name}</span>
@@ -8,4 +8,5 @@ const Users = ({ name, age }) => {
     </li>
   );
 };
-export default Users;
+
+export default User;

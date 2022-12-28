@@ -7,8 +7,8 @@ const Pagination = ({
   itemsPerPage,
   currentPage,
 }) => {
-  const isPrevPageAvialable = currentPage > 1;
-  const isNextPageAvialable =
+  const isPrevPageAvailable = currentPage > 1;
+  const isNextPageAvailable =
     totalItems / itemsPerPage > currentPage;
 
   return (
@@ -16,9 +16,9 @@ const Pagination = ({
       <button
         onClick={goPrev}
         className="btn"
-        disabled={!isPrevPageAvialable}
+        disabled={!isPrevPageAvailable}
       >
-        {isPrevPageAvialable && '←'}
+        {isPrevPageAvailable && '←'}
       </button>
       <span className="pagination__page">
         {currentPage}
@@ -26,9 +26,9 @@ const Pagination = ({
       <button
         onClick={goNext}
         className="btn"
-        disabled={!isNextPageAvialable}
+        disabled={!isNextPageAvailable}
       >
-        {isNextPageAvialable && '→'}
+        {isNextPageAvailable && '→'}
       </button>
     </div>
   );

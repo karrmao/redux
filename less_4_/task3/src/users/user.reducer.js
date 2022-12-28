@@ -1,7 +1,7 @@
 import {
   TO_NEXT_PAGE,
   TO_PREV_PAGE,
-} from './users.actions';
+} from './user.actions';
 import { users } from './usersData';
 
 const initialState = {

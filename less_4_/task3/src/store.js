@@ -1,7 +1,4 @@
-import {
-  createStore,
-  combineReducers,
-} from 'redux';
+import { createStore, combineReducers } from 'redux';
 //import counterReduser from './counter/counter.reducer';
 import usersReduser from './users/users.reducer';
 

@@ -1,36 +1,39 @@
 import React from 'react';
 import { connect } from 'react-redux';
+// import Pagination from './Pagination';
 import Pagination from './Pagination';
+
 import User from './User';
 import { goNext, goPrev } from './user.actions';
 
 const UsersList = ({
+  users,
   currentPage,
   toggleNextPage,
   togglePrevPage,
-  users,
 }) => {
   const usersPerPage = 3;
 
   const startIndex =
     (currentPage - 1) * usersPerPage;
   const endIndex = startIndex + usersPerPage;
-  const usersRender = users.slice(
+  const userToRender = users.slice(
     startIndex,
     endIndex,
   );
-  //console.log(usersRender);
+
   return (
     <div>
       <Pagination
-        goNext={toggleNextPage}
-        goPrev={togglePrevPage}
-        currentPage={currentPage}
         itemsPerPage={usersPerPage}
+        goPrev={togglePrevPage}
+        goNext={toggleNextPage}
+        currentPage={currentPage}
         totalItems={users.length}
       />
+
       <ul className="users">
-        {usersRender.map(user => (
+        {userToRender.map(user => (
           <User key={user.id} {...user} />
         ))}
       </ul>
@@ -39,8 +42,8 @@ const UsersList = ({
 };
 
 const mapState = state => ({
-  users: state.usersList,
-  currentPage: state.currentPage,
+  users: state.users.usersList,
+  currentPage: state.users.currentPage,
 });
 
 const mapDispatch = {

@@ -1,30 +1,37 @@
-import {
-  TO_NEXT_PAGE,
-  TO_PREV_PAGE,
-} from './users.actions';
-import { users } from './usersData';
+import { GO_PREV, GO_NEXT } from './user.actions';
+import { users } from './usersData.js';
 
 const initialState = {
-  usersList: users,
-  currentPage: 1,
+  users: {
+    usersList: [...users],
+    currentPage: 1,
+  },
 };
-const usersReducer = (
+
+export const userReducer = (
   state = initialState,
   action,
 ) => {
   switch (action.type) {
-    case TO_NEXT_PAGE:
+    case GO_PREV:
       return {
         ...state,
-        currentPage: state.currentPage + 1,
+        users: {
+          ...state.users,
+          currentPage:
+            state.users.currentPage - 1,
+        },
       };
-    case TO_PREV_PAGE:
+    case GO_NEXT:
       return {
         ...state,
-        currentPage: state.currentPage - 1,
+        users: {
+          ...state.users,
+          currentPage:
+            state.users.currentPage + 1,
+        },
       };
     default:
       return state;
   }
 };
-export default usersReducer;

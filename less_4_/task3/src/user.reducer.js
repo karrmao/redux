@@ -1,5 +1,5 @@
-import { GO_PREV, GO_NEXT } from './user.actions';
-import { users } from './usersData.js';
+import { GO_PREV, GO_NEXT } from "./user.actions";
+import { users } from "./usersData.js";
 
 const initialState = {
   users: {
@@ -8,18 +8,14 @@ const initialState = {
   },
 };
 
-export const userReducer = (
-  state = initialState,
-  action,
-) => {
+export const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case GO_PREV:
       return {
         ...state,
         users: {
           ...state.users,
-          currentPage:
-            state.users.currentPage - 1,
+          currentPage: state.users.currentPage - 1,
         },
       };
     case GO_NEXT:
@@ -27,8 +23,7 @@ export const userReducer = (
         ...state,
         users: {
           ...state.users,
-          currentPage:
-            state.users.currentPage + 1,
+          currentPage: state.users.currentPage + 1,
         },
       };
     default:

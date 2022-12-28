@@ -1,10 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import Pagination from './Pagination';
 import Pagination from './Pagination';
-
 import User from './User';
-import { goNext, goPrev } from './user.actions';
+import { goNext, goPrev } from '../user.actions';
 
 const UsersList = ({
   users,

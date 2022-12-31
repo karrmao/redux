@@ -1,3 +1,4 @@
+/* eslint-disable arrow-body-style */
 import { createSelector } from 'reselect';
 
 // eslint-disable-next-line import/prefer-default-export, arrow-body-style

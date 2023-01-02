@@ -30,6 +30,7 @@ const options = [
     name: 'Carbon Sport Interior',
   },
 ];
+
 const initialState = {
   optionsList: options,
   selected: [],

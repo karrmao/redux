@@ -6,7 +6,7 @@ export const optionsListSelector = state => {
 };
 
 export const selectedIdsSelector = state => {
-  return state.options.optionsList;
+  return state.options.selected;
 };
 
 export const selectedOptionsSelector = createSelector(

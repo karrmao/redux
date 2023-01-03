@@ -1,4 +1,4 @@
-import { SHOW_SPINNER, USER_DATA_RECIEVED } from './users.action';
+import { SHOW_SPINNER, USER_DATA_RECIEVED } from './users.actions';
 
 const initialData = {
   isFetching: false,
@@ -24,4 +24,5 @@ const usersReducer = (state = initialData, action) => {
       return state;
   }
 };
+
 export default usersReducer;

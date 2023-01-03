@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable no-undef */
-baseUrl = 'https://api.github.com/users';
+const baseUrl = 'https://api.github.com/users';
 
 export const getUserData = userName =>
   fetch(`${baseUrl}/${userName}`).then(response => {

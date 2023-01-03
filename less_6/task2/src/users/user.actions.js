@@ -3,7 +3,7 @@
 /* eslint-disable arrow-body-style */
 export const SHOW_SPINNER = 'SHOW_SPINNER';
 export const USER_DATA_RECIEVED = 'USER_DATA_RECIEVED';
-import { getUserData } from './users.gataway';
+import { getUserData } from './users.gateway';
 
 export const showSpinner = () => {
   return {

@@ -18,13 +18,10 @@ const UserInfo = ({ userData, isFetching }) => {
         alt="User Avatar"
         src={userData.avatar_url}
         className="user__avatar"
-      ></img>
+      />
       <div className="user__info">
-        <span className="user__x"></span>
-      </div>
-      <div className="user__info">
-        <span className="user__name"></span>
-        <span className="user__location"></span>
+        <span className="user__name">{userData.name}</span>
+        <span className="user__location">{userData.location}</span>
       </div>
     </div>
   );

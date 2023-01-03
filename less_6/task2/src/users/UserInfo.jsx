@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { isFetchingSelector, userDataSelector } from './users.selectors';
 import Spinner from './Spinner';
+
 const UserInfo = ({ userData, isFetching }) => {
   if (isFetching) {
     return <Spinner />;

@@ -9,12 +9,13 @@ class SearchField extends Component {
     userName: '',
   };
 
-  onChange = event => {
-    this.setState({ userName: event.target.value });
+  handleChange = event => {
+    this.setState({
+      userName: event.target.value,
+    });
   };
 
   handleUserSearch = () => {
-    // this.props.showSpinner();
     this.props.fetchUserData(this.state.userName);
   };
 
@@ -25,7 +26,7 @@ class SearchField extends Component {
           type="text"
           className="name-form__input"
           value={this.state.userName}
-          onChange={this.onChange}
+          onChange={this.handleChange}
         />
         <button
           className="name-form__btn btn"
@@ -39,14 +40,10 @@ class SearchField extends Component {
 }
 
 SearchField.propTypes = {
-  //   showSpinner: PropTypes.func.isRequired,
-  //   userDataRecived: PropTypes.func.isRequired,
   fetchUserData: PropTypes.func.isRequired,
 };
 
 const mapDispatch = {
-  //   showSpinner: usersActions.showSpinner,
-  //   userDataRecieved: usersActions.userDataRecieved,
   fetchUserData: usersActions.fetchUserData,
 };
 export default connect(null, mapDispatch)(SearchField);

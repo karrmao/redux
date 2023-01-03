@@ -5,9 +5,9 @@ import {
   compose,
 } from 'redux';
 import thunk from 'redux-thunk';
-import userReducer from './users/users.reducer';
+import usersReducer from './users/users.reducer';
 
-const reducer = combineReducers({ options: userReducer });
+const reducer = combineReducers({ users: usersReducer });
 
 const composeEnhancers =
   window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

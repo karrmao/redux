@@ -1,4 +1,4 @@
-import { SHOW_SPINNER, USER_DATA_RECIEVED } from './user.actions';
+import { SHOW_SPINNER, USER_DATA_RECIEVED } from './users.action';
 
 const initialState = {
   isFetching: false,

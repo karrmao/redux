@@ -4,7 +4,10 @@ import { cityDataSelector } from './weather.selectors';
 import * as weatherActions from './weather.actions';
 
 const Weather = ({ citiesList, getWeatherData }) => {
-  useEffect(() => getWeatherData(), []);
+  useEffect(() => {
+    return getWeatherData(), [];
+  });
+
   return (
     <main className="weather">
       <h1 className="weather__title">Weather data</h1>

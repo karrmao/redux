@@ -8,7 +8,7 @@ class SearchField extends Component {
     userName: '',
   };
 
-  handleChange = event => {
+  onChange = event => {
     this.setState({
       userName: event.target.value,
     });
@@ -25,7 +25,7 @@ class SearchField extends Component {
           type="text"
           className="name-form__input"
           value={this.state.userName}
-          onChange={this.handleChange}
+          onChange={this.onChange}
         />
         <button
           className="name-form__btn btn"

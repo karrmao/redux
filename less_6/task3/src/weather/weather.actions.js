@@ -1,7 +1,3 @@
-/* eslint-disable import/first */
-/* eslint-disable func-names */
-/* eslint-disable arrow-body-style */
-/* eslint-disable import/named */
 export const CITY_DATA_RECEIVED = 'CITY_DATA_RECEIVED';
 import { getWeatherDatas } from './weather.gateway';
 

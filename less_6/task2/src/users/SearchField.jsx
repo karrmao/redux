@@ -1,4 +1,3 @@
-/* eslint-disable lines-between-class-members */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';

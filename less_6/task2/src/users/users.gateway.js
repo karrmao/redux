@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable no-undef */
 const baseUrl = 'https://api.github.com/users';
 
 export const getUserData = userName =>

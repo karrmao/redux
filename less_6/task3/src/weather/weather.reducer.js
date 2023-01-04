@@ -6,12 +6,11 @@ const initialData = {
 
 const weatherReducer = (state = initialData, action) => {
   switch (action.type) {
-    case CITY_DATA_RECEIVED: {
+    case CITY_DATA_RECEIVED:
       return {
         ...state,
         cityData: action.payload.cityData,
       };
-    }
     default:
       return state;
   }

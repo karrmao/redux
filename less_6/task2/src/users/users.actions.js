@@ -1,19 +1,15 @@
 export const SHOW_SPINNER = 'SHOW_SPINNER';
-export const USER_DATA_RECIEVED = 'USER_DATA_RECIEVED';
+export const USER_DATA_RECEIVED = 'USER_DATA_RECEIVED';
 import { getUserData } from './users.gateway';
 
 export const showSpinner = () => {
-  return {
-    type: SHOW_SPINNER,
-  };
+  return { type: SHOW_SPINNER };
 };
 
-export const userDataRecieved = userData => {
+export const userDataReceived = userData => {
   return {
-    type: USER_DATA_RECIEVED,
-    payload: {
-      userData,
-    },
+    type: USER_DATA_RECEIVED,
+    payload: { userData },
   };
 };
 
@@ -21,7 +17,7 @@ export const fetchUserData = userName => {
   return function (dispatch) {
     dispatch(showSpinner());
     getUserData(userName).then(userData => {
-      dispatch(userDataRecieved(userData));
+      dispatch(userDataReceived(userData));
     });
   };
 };

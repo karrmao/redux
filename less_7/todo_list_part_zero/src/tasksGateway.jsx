@@ -10,11 +10,6 @@ export const createTask = taskData => {
     },
     body: JSON.stringify(taskData),
   });
-  // .then(response => {
-  //   if (!response.ok) {
-  //     throw new Error('Faild to create new task');
-  //   }
-  // });
 };
 
 export const updateTask = (taskId, taskData) => {
@@ -25,36 +20,14 @@ export const updateTask = (taskId, taskData) => {
     },
     body: JSON.stringify(taskData),
   });
-  // .then(response => {
-  //   if (!response.ok) {
-  //     throw new Error('Faild to create update task');
-  //   }
-  // });
 };
 
 export const deleteTask = taskId => {
   return fetch(`${baseUrl}/${taskId}`, {
     method: 'DELETE',
   });
-  // .then(response => {
-  //   if (!response.ok) {
-  //     throw new Error('Faild to delete task');
-  //   }
-  // });
 };
 
 export const getTasksList = () => {
   return fetch(baseUrl).then(response => response.json());
 };
-
-// export const fetchTasksList = () => {
-//   return fetch(baseUrl)
-//     .then(res => {
-//       if (res.ok) {
-//         return res.json();
-//       }
-//     })
-//     .then(tasksList =>
-//       tasksList.map(({ _id, ...task }) => ({ id: _id, ...task })),
-//     );
-// };

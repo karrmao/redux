@@ -1,10 +1,15 @@
 /* eslint-disable lines-between-class-members */
-import React from 'react';
+import React, { Component } from 'react';
 import CreateTaskInput from './CreateTaskInput';
-import { getTasksList } from './tasksGateway';
+import {
+  getTasksList,
+  createTask,
+  updateTask,
+  deleteTask,
+} from './tasksGateway';
 import TasksList from './TasksList';
 
-class TodoList extends Comment {
+class TodoList extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -32,18 +37,17 @@ class TodoList extends Comment {
     };
     updateTask(id, updatedTask).then(() => this.fetchTasks());
   };
+
   handleTaskDelete = id => {
     deleteTask(id).then(() => this.fetchTasksList());
   };
 
   handleTaskCreate = text => {
-    createTask(
-      {
-        text,
-        done: false,
-        createDate: new Date().toISOString(),
-      }.then(this.fetchTasksList),
-    );
+    createTask({
+      text,
+      done: false,
+      createDate: new Date().toISOString(),
+    }).then(this.fetchTasksList);
   };
   render() {
     return (
@@ -52,7 +56,7 @@ class TodoList extends Comment {
         <main className="todo-list">
           <CreateTaskInput onCreate={this.handleTaskCreate} />
           <TasksList
-            task={this.state.tasks}
+            tasks={this.state.tasks}
             handleTaskStatusChange={this.handleTaskStatusChange}
             handleTaskDelete={this.handleTaskDelete}
           />

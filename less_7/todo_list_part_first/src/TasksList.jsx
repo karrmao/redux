@@ -7,7 +7,7 @@ const TasksList = ({
   handleTaskStatusChange,
   handleTaskDelete,
 }) => {
-  const sortedList = tasks.slisce().sort((a, b) => a.done - b.done);
+  const sortedList = tasks.slice().sort((a, b) => a.done - b.done);
   return (
     <ul className="list">
       {sortedList.map(task => (

@@ -1,5 +1,3 @@
-// import { fetchTasksList, updateTask } from './tasksGateway';
-
 import * as tasksGataway from './tasksGateway';
 import { tasksListSelector } from './tasks.selectors';
 

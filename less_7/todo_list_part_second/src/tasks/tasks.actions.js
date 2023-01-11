@@ -1,4 +1,4 @@
-import * as tasksGataway from './tasksGateway';
+import * as tasksGateway from './tasksGateway';
 import { tasksListSelector } from './tasks.selectors';
 
 export const TASKS_LIST_RECIEVED = 'TASKS_LIST_RECIEVED';
@@ -15,7 +15,7 @@ export const tasksListRecieved = tasksList => {
 
 export const getTaskList = () => {
   const thunkAction = function (dispatch) {
-    tasksGataway
+    tasksGateway
       .fetchTasksList()
       .then(tasksList => dispatch(tasksListRecieved(tasksList)));
   };
@@ -31,7 +31,7 @@ export const updateTask = taskId => {
       ...task,
       done: !task.done,
     };
-    tasksGataway
+    tasksGateway
       .updateTask(taskId, updatedTask)
       .then(() => dispatch(getTaskList()));
   };
@@ -40,7 +40,7 @@ export const updateTask = taskId => {
 
 export const deleteTask = taskId => {
   const thunkAction = function (dispatch) {
-    tasksGataway.deleteTask(taskId).then(() => dispatch(getTaskList()));
+    tasksGateway.deleteTask(taskId).then(() => dispatch(getTaskList()));
   };
   return thunkAction;
 };
@@ -52,7 +52,7 @@ export const createTask = text => {
       done: false,
       createdAt: new Date().toISOString(),
     };
-    tasksGataway.createTask(taskData).then(() => dispatch(getTaskList()));
+    tasksGateway.createTask(taskData).then(() => dispatch(getTaskList()));
   };
   return thunkAction;
 };

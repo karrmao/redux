@@ -46,7 +46,7 @@ TodoList.propTypes = {
   getTasksList: PropTypes.func.isRequired,
   updateTask: PropTypes.func.isRequired,
   deleteTask: PropTypes.func.isRequired,
-  createTask: PropTypes.func.createTask,
+  createTask: PropTypes.func.isRequired,
 };
 
 const mapDispatch = {

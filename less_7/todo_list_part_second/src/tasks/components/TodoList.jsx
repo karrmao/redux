@@ -1,73 +1,40 @@
 /* eslint-disable lines-between-class-members */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import CreateTaskInput from './CreateTaskInput';
-import {
-  createTask,
-  updateTask,
-  deleteTask,
-  // getTasksList,
-} from '../tasksGateway';
-import TasksList from './TasksList';
 import { connect } from 'react-redux';
+import CreateTaskInput from './CreateTaskInput';
+import TasksList from './TasksList';
+// import { createTask } from '../tasksGateway';
 import * as tasksAction from '../tasks.actions';
-import { tasksListSelector } from '../tasks.selectors';
+import { sortedTasksListSelector } from '../tasks.selectors';
 
 class TodoList extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     tasks: [],
-  //   };
-  // }
-
   componentDidMount() {
     this.props.getTasksList();
-    //this.fetchTasksList();
   }
 
-  // fetchTasksList = () => {
-  //   getTasksList().then(tasksList => {
-  //     this.setState({ tasks: tasksList });
-  //   });
+  // handleTaskStatusChange = id => {
+  //   this.props.updateTask(id); //look
   // };
 
-  handleTaskStatusChange = id => {
-    const { tasks } = this.state;
-    const { done, text, createDate } = tasks.find(task => task.id === id);
-    const updatedTask = {
-      ...text,
-      createDate,
-      done: !done,
-    };
-    updateTask(id, updatedTask).then(() => this.fetchTasks());
-  };
-
-  handleTaskDelete = id => {
-    deleteTask(id).then(() => this.fetchTasksList());
-  };
+  // handleTaskDelete = id => {
+  //   this.props.deleteTask(id);
+  // };
 
   handleTaskCreate = text => {
-    createTask({
-      text,
-      done: false,
-      createDate: new Date().toISOString(),
-    }).then(this.fetchTasksList);
+    this.props.createTask({ text });
   };
 
   render() {
-    // const { getTasksList } = this.props;  //+add
     return (
       <>
         <h1 className="title">Todo List</h1>
         <main className="todo-list">
-          <CreateTaskInput onCreate={this.handleTaskCreate} />
+          <CreateTaskInput onCreate={this.props.createTask} />
           <TasksList
-            // tasks={this.state.tasks}
-            // tasks={[]}
             tasks={this.props.tasks}
-            handleTaskStatusChange={this.handleTaskStatusChange}
-            handleTaskDelete={this.handleTaskDelete}
+            handleTaskStatusChange={this.props.updateTask}
+            handleTaskDelete={this.props.deleteTask}
           />
         </main>
       </>
@@ -76,17 +43,23 @@ class TodoList extends Component {
 }
 
 TodoList.propTypes = {
-  getTasksList: PropTypes.func.isRequired,
   tasks: PropTypes.arrayOf(PropTypes.shape()),
+  getTasksList: PropTypes.func.isRequired,
+  updateTask: PropTypes.func.isRequired,
+  deleteTask: PropTypes.func.isRequired,
+  createTask: PropTypes.func.createTask,
 };
 
 const mapDispatch = {
   getTasksList: tasksAction.getTasksList,
+  updateTask: tasksAction.updateTask,
+  deleteTask: tasksAction.deleteTask,
+  createTask: tasksAction.createTask,
 };
 
 const mapState = state => {
   return {
-    tasks: tasksListSelector(state),
+    tasks: sortedTasksListSelector(state),
   };
 };
 

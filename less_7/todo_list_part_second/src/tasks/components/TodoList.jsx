@@ -9,7 +9,7 @@ import { sortedTasksListSelector } from '../tasks.selectors';
 
 class TodoList extends Component {
   componentDidMount() {
-    this.props.getTasksList();
+    this.props.getTaskList();
   }
 
   // handleTaskStatusChange = id => {
@@ -43,14 +43,14 @@ class TodoList extends Component {
 
 TodoList.propTypes = {
   tasks: PropTypes.arrayOf(PropTypes.shape()),
-  getTasksList: PropTypes.func.isRequired,
+  getTaskList: PropTypes.func.isRequired,
   updateTask: PropTypes.func.isRequired,
   deleteTask: PropTypes.func.isRequired,
   createTask: PropTypes.func.isRequired,
 };
 
 const mapDispatch = {
-  getTasksList: tasksAction.getTasksList,
+  getTaskList: tasksAction.getTaskList,
   updateTask: tasksAction.updateTask,
   deleteTask: tasksAction.deleteTask,
   createTask: tasksAction.createTask,

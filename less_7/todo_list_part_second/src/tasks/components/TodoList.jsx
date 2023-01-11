@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import CreateTaskInput from './CreateTaskInput';
 import TasksList from './TasksList';
-// import { createTask } from '../tasksGateway';
 import * as tasksAction from '../tasks.actions';
 import { sortedTasksListSelector } from '../tasks.selectors';
 
@@ -21,9 +20,9 @@ class TodoList extends Component {
   //   this.props.deleteTask(id);
   // };
 
-  handleTaskCreate = text => {
-    this.props.createTask({ text });
-  };
+  // handleTaskCreate = text => {
+  //   this.props.createTask({ text });
+  // };
 
   render() {
     return (

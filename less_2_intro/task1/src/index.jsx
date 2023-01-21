@@ -1,3 +1,4 @@
+/* eslint-disable spaced-comment */
 import { createStore } from 'redux';
 
 const INCREMENT = 'COUNTER/INCREMENT';
@@ -24,14 +25,14 @@ export const counterReducer = (state = 0, action) => {
 
 export const store = createStore(counterReducer);
 
+console.log(store); //{dispatch: ƒ, subscribe: ƒ, getState: ƒ, replaceReducer: ƒ, @@observable: ƒ}
+
 //- test data
-
-//console.log(store); //{dispatch: ƒ, subscribe: ƒ, getState: ƒ, replaceReducer: ƒ, @@observable: ƒ}
-
 store.dispatch(increment()); //1
 store.dispatch(increment()); //2
 store.dispatch(increment()); //3
-store.dispatch(decrement()); //2
+store.dispatch(increment()); //4
+store.dispatch(decrement()); //3
 
 console.log(store.getState()); // 0
 

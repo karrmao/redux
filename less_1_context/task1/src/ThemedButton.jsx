@@ -18,5 +18,4 @@ class ThemedButton extends Component {
 }
 
 ThemedButton.contextType = ThemeContext;
-
 export default ThemedButton;

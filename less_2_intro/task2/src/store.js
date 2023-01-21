@@ -1,3 +1,5 @@
+/* eslint-disable arrow-body-style */
+/* eslint-disable spaced-comment */
 import { createStore } from 'redux';
 
 const INCREMENT = 'COUNTER/INCREMENT';

@@ -1,3 +1,4 @@
+/* eslint-disable arrow-body-style */
 import React from 'react';
 import { connect } from 'react-redux';
 // import { increment, decrement, reset } from '../counter.actions';
@@ -27,7 +28,6 @@ const mapState = state => {
     counter: state,
   };
 };
-
 // const mapDispatch = dispatch => {
 //   return {
 //     incr: () => dispatch(increment()),
@@ -35,12 +35,10 @@ const mapState = state => {
 //     res: () => dispatch(reset()),
 //   };
 // };
-
 const mapDispatch = {
   increment: counterActions.increment,
   decrement: counterActions.decrement,
   reset: counterActions.reset,
 };
 const connector = connect(mapState, mapDispatch); //HOC
-
 export default connector(Counter);

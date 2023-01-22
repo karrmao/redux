@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 const baseUrl = 'https://api.github.com/users';
 
 export const getUserData = userName =>
@@ -7,3 +8,5 @@ export const getUserData = userName =>
     }
     throw new Error();
   });
+
+console.log(window.baseUrl);

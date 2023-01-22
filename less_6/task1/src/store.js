@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import { applyMiddleware, createStore, compose } from 'redux';
 import counterReduser from './counter.reducer';
 
@@ -10,8 +11,7 @@ const logger = store => next => action => {
   return result;
 };
 
-const composeEnhancers =
-  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
   counterReduser,

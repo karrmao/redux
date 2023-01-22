@@ -35,10 +35,8 @@ UserInfo.defaultValue = {
   userData: null,
 };
 
-const mapState = state => {
-  return {
-    isFetching: isFetchingSelector(state),
-    userData: userDataSelector(state),
-  };
-};
+const mapState = state => ({
+  isFetching: isFetchingSelector(state),
+  userData: userDataSelector(state),
+});
 export default connect(mapState)(UserInfo);

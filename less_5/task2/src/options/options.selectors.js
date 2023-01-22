@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable arrow-body-style */
 import { createSelector } from 'reselect';
 
@@ -12,18 +13,14 @@ export const selectedIdsSelector = state => {
 export const selectedOptionsSelector = createSelector(
   [optionsListSelector, selectedIdsSelector],
   (allOptionsList, selectedIds) => {
-    return allOptionsList.filter(option =>
-      selectedIds.includes(option.id),
-    );
+    return allOptionsList.filter(option => selectedIds.includes(option.id));
   },
 );
 
 export const availableOptionsSelector = createSelector(
   [optionsListSelector, selectedIdsSelector],
   (allOptionsList, selectedIds) => {
-    return allOptionsList.filter(
-      option => !selectedIds.includes(option.id),
-    );
+    return allOptionsList.filter(option => !selectedIds.includes(option.id));
   },
 );
 

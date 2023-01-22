@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 import { GO_PREV, GO_NEXT } from './user.actions';
 import { users } from './usersData.js';
 

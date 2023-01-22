@@ -1,3 +1,4 @@
+/* eslint-disable arrow-body-style */
 export const usersListSelector = state => {
   return state.users.usersList;
 };

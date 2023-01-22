@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable arrow-body-style */
+import React from 'react';
 
 const User = ({ name, age }) => {
   return (
@@ -8,5 +9,4 @@ const User = ({ name, age }) => {
     </li>
   );
 };
-
 export default User;

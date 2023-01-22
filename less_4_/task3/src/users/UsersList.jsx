@@ -1,8 +1,8 @@
-import React from "react";
-import { connect } from "react-redux";
-import Pagination from "../users/Pagination";
-import User from "./User";
-import { goNext, goPrev } from "../user.actions";
+import React from 'react';
+import { connect } from 'react-redux';
+import Pagination from '../users/Pagination';
+import User from './User';
+import { goNext, goPrev } from '../user.actions';
 
 const UsersList = ({ users, currentPage, toggleNextPage, togglePrevPage }) => {
   const usersPerPage = 3;
@@ -43,7 +43,4 @@ const mapDispatch = {
 const connector = connect(mapState, mapDispatch);
 
 const ConnectedUsersList = connector(UsersList);
-
 export default ConnectedUsersList;
-
-

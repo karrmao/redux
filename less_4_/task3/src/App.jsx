@@ -1,7 +1,8 @@
-import React from "react";
-import UsersList from "./users/UsersList";
-import { Provider } from "react-redux";
-import store from "./store";
+/* eslint-disable arrow-body-style */
+import React from 'react';
+import UsersList from './users/UsersList';
+import { Provider } from 'react-redux';
+import store from './store';
 
 const App = () => {
   return (
@@ -10,5 +11,4 @@ const App = () => {
     </Provider>
   );
 };
-
 export default App;

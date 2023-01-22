@@ -7,12 +7,7 @@ import { goNext, goPrev } from './user.actions';
 import { usersListSelector, usersPageSelector } from './users.selectors';
 
 const itemsPerPage = 3;
-const UsersList = ({
-  users,
-  currentPage,
-  toggleNextPage,
-  togglePrevPage,
-}) => {
+const UsersList = ({ users, currentPage, toggleNextPage, togglePrevPage }) => {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const userToDisplay = users.slice(startIndex, endIndex);
@@ -53,9 +48,6 @@ const mapDispatch = {
 };
 
 // const connector = connect(mapState, mapDispatch);
-
 // const ConnectedUsersList = connector(UsersList);
-
 // export default ConnectedUsersList;
-
 export default connect(mapState, mapDispatch)(UsersList);

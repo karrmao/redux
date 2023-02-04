@@ -1,6 +1,7 @@
 import store from './store';
 import { increment, decrement, reset } from './counter.actions';
-import { addUser, deleteUser, updateUser } from './users.actions';
+// eslint-disable-next-line import/named
+import { addUser, deleteUser, updateUser } from './users.reducer';
 
 store.subscribe(() => console.log(store.getState()));
 

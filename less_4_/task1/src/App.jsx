@@ -1,7 +1,9 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import Counter from './components/Counter';
 import store from './store';
+import Counter from './components/Counter';
+
+store.subscrible(() => console.log(store.getState()));
 
 const App = () => {
   return (

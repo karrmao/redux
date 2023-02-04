@@ -1,3 +1,4 @@
+/* eslint-disable arrow-body-style */
 export const ADD_PRODUCT = 'PRODUCT/ADD_PRODUCT';
 export const REMOVE_PRODUCT = 'PRODUCT/REMOVE_PRODUCT ';
 

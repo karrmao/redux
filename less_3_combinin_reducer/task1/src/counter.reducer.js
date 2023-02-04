@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 import { INCREMENT, DECREMENT, RESET } from './counter.actions';
 
 export const counterReducer = (state = 0, action) => {

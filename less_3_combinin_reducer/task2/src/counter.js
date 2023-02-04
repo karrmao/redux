@@ -1,3 +1,5 @@
+/* eslint-disable arrow-body-style */
+/* eslint-disable no-underscore-dangle */
 import { createStore } from 'redux';
 
 export const INCREMENT = 'COUNTER/INCREMENT';
@@ -24,6 +26,5 @@ export const counterReducer = (state = 0, action) => {
 
 export const store = createStore(
   counterReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ &&
-    window.__REDUX_DEVTOOLS_EXTENSION__(),
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 );
